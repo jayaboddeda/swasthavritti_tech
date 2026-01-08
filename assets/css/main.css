@@ -2922,6 +2922,8 @@ only screen and (min-width: 576px) and (max-width: 767px),
 
 .mainmenu ul>li>.mega-menu-service-single,
 .mobile_menu ul>li>.mega-menu-service-single {
+  display: flex;
+  align-items: center;
   gap: 12px;
 }
 
