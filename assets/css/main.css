@@ -21205,12 +21205,22 @@ only screen and (min-width: 576px) and (max-width: 767px),
 /* START: Hero CSS */
 .tj-hero-section-four {
   padding-top: 140px;
-  background: var(--tj-color-theme-bg);
+  background: radial-gradient(circle at 80% 50%, rgba(11, 74, 120, 0.08) 0%, transparent 40%), linear-gradient(135deg, var(--tj-color-theme-bg) 0%, #ffffff 100%);
   position: relative;
   z-index: 2;
   display: flex;
   align-items: center;
   min-height: 100vh;
+}
+
+.tj-hero-section-four::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url(../images/bg/world_map_bg.png) no-repeat 25% center / cover;
+  opacity: 0.3;
+  z-index: -1;
+  pointer-events: none;
 }
 
 .tj-hero-section-four .hero-shapes-1 {
