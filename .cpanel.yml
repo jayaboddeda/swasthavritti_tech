@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/wa16d1ooo3pv/public_html/swasthavritti.com/
+    - /bin/cp -R * $DEPLOYPATH
