@@ -17,6 +17,59 @@
 (function () {
     'use strict';
 
+    function getLoaderRootPath() {
+        const loaderScript = document.currentScript
+            || Array.from(document.scripts).find(script => /component-loader\.js(?:\?|$)/.test(script.src || ''));
+
+        if (loaderScript && loaderScript.src) {
+            return new URL('../', loaderScript.src).toString();
+        }
+
+        return new URL('./', window.location.href).toString();
+    }
+
+    const loaderRootPath = getLoaderRootPath();
+
+    function isSpecialOrAbsoluteUrl(value) {
+        if (!value) return true;
+
+        const trimmed = value.trim();
+        if (!trimmed) return true;
+        if (trimmed.startsWith('#') || trimmed.startsWith('/')) return true;
+
+        return /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i.test(trimmed);
+    }
+
+    function resolveComponentUrl(value) {
+        if (isSpecialOrAbsoluteUrl(value)) {
+            return value;
+        }
+
+        try {
+            return new URL(value, loaderRootPath).toString();
+        } catch (e) {
+            console.error('Failed to resolve component URL:', value, e);
+            return value;
+        }
+    }
+
+    function normalizeComponentUrls(container) {
+        if (!container) return;
+
+        const elements = container.querySelectorAll('[href], [src], [data-bg-image], [data-mask]');
+        elements.forEach((el) => {
+            ['href', 'src', 'data-bg-image', 'data-mask'].forEach((attr) => {
+                if (!el.hasAttribute(attr)) return;
+
+                const originalValue = el.getAttribute(attr);
+                const resolvedValue = resolveComponentUrl(originalValue);
+                if (resolvedValue !== originalValue) {
+                    el.setAttribute(attr, resolvedValue);
+                }
+            });
+        });
+    }
+
     // Component mapping
     const components = {
         'header': 'components/header.html',
@@ -166,16 +219,19 @@
             return;
         }
 
+        const resolvedComponentPath = new URL(componentPath, loaderRootPath).toString();
+
         // Fetch the component HTML
-        fetch(componentPath)
+        fetch(resolvedComponentPath)
             .then(response => {
                 if (!response.ok) {
-                    throw new Error(`Failed to load component: ${componentPath}`);
+                    throw new Error(`Failed to load component: ${resolvedComponentPath}`);
                 }
                 return response.text();
             })
             .then(html => {
                 element.innerHTML = html;
+                normalizeComponentUrls(element);
 
                 // Re-initialize JS features for the new content
                 reinitializeJS(element, componentName);
@@ -238,10 +294,70 @@
         componentElements.forEach(loadComponent);
     }
 
+    /**
+     * Ensure recent posts never includes the currently opened blog page.
+     * Also rotates suggestions so each page can show a different set.
+     */
+    function initRecentPosts() {
+        const containers = document.querySelectorAll('.sidebar-recent-post');
+        if (!containers.length) return;
+
+        const posts = [
+            { href: 'student-visa-guide-usa-uk-canada-australia-2026.html', title: 'Student Visa Guide 2026: USA, UK, Canada, Australia', date: 'Mar 2026', image: '../assets/images/blog/tj-blog-1.webp', alt: 'Student Visa Guide 2026' },
+            { href: 'ielts-2026-changes-preparation-guide.html', title: 'IELTS 2026 Changes and Preparation Guide', date: 'Mar 2026', image: '../assets/images/blog/tj-blog-2.webp', alt: 'IELTS 2026 Changes' },
+            { href: 'overseas-blue-collar-jobs-india-2026-work-visa-guide.html', title: 'Overseas Blue-Collar Jobs India 2026 Guide', date: 'Mar 2026', image: '../assets/images/blog/tj-blog-3.webp', alt: 'Overseas Blue-Collar Jobs Guide' },
+            { href: 'study-in-usa-from-hyderabad.html', title: 'Study in USA from Hyderabad 2026', date: 'Mar 2026', image: '../assets/images/blog/tj-blog-1.webp', alt: 'Study in USA from Hyderabad' },
+            { href: 'study-in-uk-from-hyderabad.html', title: 'Study in UK from Hyderabad 2026', date: 'Mar 2026', image: '../assets/images/blog/tj-blog-2.webp', alt: 'Study in UK from Hyderabad' },
+            { href: 'study-in-canada-from-hyderabad.html', title: 'Study in Canada from Hyderabad 2026', date: 'Mar 2026', image: '../assets/images/blog/tj-blog-3.webp', alt: 'Study in Canada from Hyderabad' },
+            { href: 'study-in-australia-from-hyderabad.html', title: 'Study in Australia from Hyderabad 2026', date: 'Mar 2026', image: '../assets/images/blog/tj-blog-1.webp', alt: 'Study in Australia from Hyderabad' },
+            { href: 'study-in-europe-from-hyderabad.html', title: 'Study in Europe from Hyderabad 2026', date: 'Mar 2026', image: '../assets/images/blog/tj-blog-2.webp', alt: 'Study in Europe from Hyderabad' },
+            { href: 'study-in-new-zealand-from-hyderabad.html', title: 'Study in New Zealand from Hyderabad 2026', date: 'Mar 2026', image: '../assets/images/blog/tj-blog-3.webp', alt: 'Study in New Zealand from Hyderabad' },
+            { href: 'study-in-mauritius-from-hyderabad.html', title: 'Study in Mauritius from Hyderabad 2026', date: 'Mar 2026', image: '../assets/images/blog/tj-blog-1.webp', alt: 'Study in Mauritius from Hyderabad' }
+        ];
+
+        const currentPage = (window.location.pathname.split('/').pop() || '').toLowerCase();
+        const filtered = posts.filter(post => post.href.toLowerCase() !== currentPage);
+        const source = filtered.length ? filtered : posts;
+
+        const hash = (value) => {
+            let total = 0;
+            for (let i = 0; i < value.length; i += 1) total = (total + value.charCodeAt(i)) % 100000;
+            return total;
+        };
+        const start = source.length ? hash(currentPage || 'blog') % source.length : 0;
+
+        const selected = [];
+        for (let i = 0; i < Math.min(3, source.length); i += 1) {
+            selected.push(source[(start + i) % source.length]);
+        }
+
+        const itemHtml = (post) => `
+            <div class="single-post d-flex align-items-center">
+               <div class="post-image">
+                  <a href="${post.href}"><img src="${post.image}" alt="${post.alt}"></a>
+               </div>
+               <div class="post-header">
+                  <h6 class="title-link">
+                     <a href="${post.href}">${post.title}</a>
+                  </h6>
+                  <span class="date">${post.date}</span>
+               </div>
+            </div>
+        `;
+
+        containers.forEach((container) => {
+            container.innerHTML = selected.map(itemHtml).join('');
+        });
+    }
+
     // Load components when window is fully loaded to ensure all JS/CSS are ready
     if (document.readyState === 'complete') {
         initComponents();
+        initRecentPosts();
     } else {
-        window.addEventListener('load', initComponents);
+        window.addEventListener('load', () => {
+            initComponents();
+            initRecentPosts();
+        });
     }
 })();
