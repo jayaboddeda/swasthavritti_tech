@@ -10334,6 +10334,16 @@ only screen and (min-width: 576px) and (max-width: 767px),
   }
 }
 
+@media only screen and (min-width: 992px) {
+  .tj-post-area .tj-blog-sidebar {
+    position: sticky;
+    top: 120px;
+    max-height: calc(100vh - 140px);
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}
+
 .tj-post-item {
   border: 1px solid var(--tj-color-border-2);
   background-color: var(--tj-color-common-white);

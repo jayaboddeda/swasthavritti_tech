@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Loading...</title>
+  <script>
+    (function () {
+      var target = '/blog/study-in-new-zealand-from-hyderabad.html';
+      var baseHref = '/blog/';
+
+      fetch(target, { cache: 'no-store' })
+        .then(function (response) {
+          if (!response.ok) throw new Error('Failed to load: ' + target);
+          return response.text();
+        })
+        .then(function (html) {
+          var headMatch = html.match(/<head[^>]*>/i);
+          if (headMatch && !/<base\s/i.test(html)) {
+            html = html.replace(/<head([^>]*)>/i, '<head><base href="' + baseHref + '">');
+          }
+
+          document.open();
+          document.write(html);
+          document.close();
+        })
+        .catch(function () {
+          window.location.replace(target);
+        });
+    })();
+  </script>
+</head>
+<body></body>
+</html>

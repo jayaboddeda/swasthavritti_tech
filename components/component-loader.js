@@ -30,6 +30,18 @@
 
     const loaderRootPath = getLoaderRootPath();
 
+    function getCurrentPageSlug() {
+        const segments = window.location.pathname
+            .split('/')
+            .filter(Boolean);
+
+        if (!segments.length) return '';
+
+        return segments[segments.length - 1]
+            .replace(/\.html$/i, '')
+            .toLowerCase();
+    }
+
     function isSpecialOrAbsoluteUrl(value) {
         if (!value) return true;
 
@@ -197,7 +209,7 @@
         // Set active class for related-services links
         if (componentName === 'related-services') {
             const links = container.querySelectorAll('.service-category ul li a');
-            const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+            const currentPath = getCurrentPageSlug();
             links.forEach(link => {
                 const href = link.getAttribute('href');
                 if (href === currentPath) {
@@ -303,22 +315,23 @@
         if (!containers.length) return;
 
         const posts = [
-            { href: 'student-visa-guide-usa-uk-canada-australia-2026.html', title: 'Student Visa Guide 2026: USA, UK, Canada, Australia', date: 'Mar 2026', image: '../assets/images/blog/tj-blog-1.webp', alt: 'Student Visa Guide 2026' },
-            { href: 'ielts-2026-changes-preparation-guide.html', title: 'IELTS 2026 Changes and Preparation Guide', date: 'Mar 2026', image: '../assets/images/blog/tj-blog-2.webp', alt: 'IELTS 2026 Changes' },
-            { href: 'overseas-blue-collar-jobs-india-2026-work-visa-guide.html', title: 'Overseas Blue-Collar Jobs India 2026 Guide', date: 'Mar 2026', image: '../assets/images/blog/tj-blog-3.webp', alt: 'Overseas Blue-Collar Jobs Guide' },
-            { href: 'study-in-usa-from-hyderabad.html', title: 'Study in USA from Hyderabad 2026', date: 'Mar 2026', image: '../assets/images/blog/tj-blog-1.webp', alt: 'Study in USA from Hyderabad' },
-            { href: 'study-in-uk-from-hyderabad.html', title: 'Study in UK from Hyderabad 2026', date: 'Mar 2026', image: '../assets/images/blog/tj-blog-2.webp', alt: 'Study in UK from Hyderabad' },
-            { href: 'study-in-canada-from-hyderabad.html', title: 'Study in Canada from Hyderabad 2026', date: 'Mar 2026', image: '../assets/images/blog/tj-blog-3.webp', alt: 'Study in Canada from Hyderabad' },
-            { href: 'study-in-australia-from-hyderabad.html', title: 'Study in Australia from Hyderabad 2026', date: 'Mar 2026', image: '../assets/images/blog/tj-blog-1.webp', alt: 'Study in Australia from Hyderabad' },
-            { href: 'study-in-europe-from-hyderabad.html', title: 'Study in Europe from Hyderabad 2026', date: 'Mar 2026', image: '../assets/images/blog/tj-blog-2.webp', alt: 'Study in Europe from Hyderabad' },
-            { href: 'study-in-new-zealand-from-hyderabad.html', title: 'Study in New Zealand from Hyderabad 2026', date: 'Mar 2026', image: '../assets/images/blog/tj-blog-3.webp', alt: 'Study in New Zealand from Hyderabad' },
-            { href: 'study-in-mauritius-from-hyderabad.html', title: 'Study in Mauritius from Hyderabad 2026', date: 'Mar 2026', image: '../assets/images/blog/tj-blog-1.webp', alt: 'Study in Mauritius from Hyderabad' }
+            { href: 'student-visa-guide-usa-uk-canada-australia-2026', title: 'Student Visa Guide 2026: USA, UK, Canada, Australia', date: 'Mar 2026', image: '../assets/images/blog/tj-blog-1.webp', alt: 'Student Visa Guide 2026' },
+            { href: 'ielts-2026-changes-preparation-guide', title: 'IELTS 2026 Changes and Preparation Guide', date: 'Mar 2026', image: '../assets/images/blog/tj-blog-2.webp', alt: 'IELTS 2026 Changes' },
+            { href: 'overseas-blue-collar-jobs-india-2026-work-visa-guide', title: 'Overseas Blue-Collar Jobs India 2026 Guide', date: 'Mar 2026', image: '../assets/images/blog/tj-blog-3.webp', alt: 'Overseas Blue-Collar Jobs Guide' },
+            { href: 'study-in-usa-from-hyderabad', title: 'Study in USA from Hyderabad 2026', date: 'Mar 2026', image: '../assets/images/blog/tj-blog-1.webp', alt: 'Study in USA from Hyderabad' },
+            { href: 'study-in-uk-from-hyderabad', title: 'Study in UK from Hyderabad 2026', date: 'Mar 2026', image: '../assets/images/blog/tj-blog-2.webp', alt: 'Study in UK from Hyderabad' },
+            { href: 'study-in-canada-from-hyderabad', title: 'Study in Canada from Hyderabad 2026', date: 'Mar 2026', image: '../assets/images/blog/tj-blog-3.webp', alt: 'Study in Canada from Hyderabad' },
+            { href: 'study-in-australia-from-hyderabad', title: 'Study in Australia from Hyderabad 2026', date: 'Mar 2026', image: '../assets/images/blog/tj-blog-1.webp', alt: 'Study in Australia from Hyderabad' },
+            { href: 'study-in-europe-from-hyderabad', title: 'Study in Europe from Hyderabad 2026', date: 'Mar 2026', image: '../assets/images/blog/tj-blog-2.webp', alt: 'Study in Europe from Hyderabad' },
+            { href: 'study-in-new-zealand-from-hyderabad', title: 'Study in New Zealand from Hyderabad 2026', date: 'Mar 2026', image: '../assets/images/blog/tj-blog-3.webp', alt: 'Study in New Zealand from Hyderabad' },
+            { href: 'study-in-mauritius-from-hyderabad', title: 'Study in Mauritius from Hyderabad 2026', date: 'Mar 2026', image: '../assets/images/blog/tj-blog-1.webp', alt: 'Study in Mauritius from Hyderabad' }
         ];
 
-        const currentPage = (window.location.pathname.split('/').pop() || '').toLowerCase();
+        const currentPage = getCurrentPageSlug();
         const filtered = posts.filter(post => post.href.toLowerCase() !== currentPage);
         const source = filtered.length ? filtered : posts;
 
+        
         const hash = (value) => {
             let total = 0;
             for (let i = 0; i < value.length; i += 1) total = (total + value.charCodeAt(i)) % 100000;
@@ -353,11 +366,9 @@
     // Load components when window is fully loaded to ensure all JS/CSS are ready
     if (document.readyState === 'complete') {
         initComponents();
-        initRecentPosts();
     } else {
         window.addEventListener('load', () => {
             initComponents();
-            initRecentPosts();
         });
     }
 })();
