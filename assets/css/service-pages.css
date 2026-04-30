@@ -57,6 +57,199 @@ body.page-software-solutions::before {
    3. Student Visa Page Styles
    ========================================= */
 
+/* Student Visa Hero */
+body.page-student-visa .student-hero-subtext {
+    color: rgba(255, 255, 255, 0.94);
+    max-width: 980px;
+    margin: 18px auto 0;
+    font-size: 19px;
+    line-height: 1.65;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
+body.page-student-visa .student-hero-cta {
+    margin-top: 20px;
+}
+
+body.page-student-visa .student-hero-cta .tj-primary-btn {
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 767px) {
+    body.page-student-visa .student-hero-subtext {
+        font-size: 16px;
+        line-height: 1.55;
+    }
+}
+
+/* Student Visa Country Services Block */
+.destination-country-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.country-visa-card {
+    background: #ffffff;
+    border: 1px solid #e7edf7;
+    border-radius: 14px;
+    padding: 22px;
+    box-shadow: 0 8px 26px rgba(5, 36, 70, 0.06);
+}
+
+.country-visa-card .dest-title {
+    margin-bottom: 14px;
+}
+
+.country-visa-card p {
+    margin-bottom: 10px;
+    line-height: 1.65;
+}
+
+.country-visa-card .key-docs {
+    margin-bottom: 0;
+}
+
+.visa-facts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.visa-fact {
+    border: 1px solid #dfe8f5;
+    border-radius: 10px;
+    background: #f8fbff;
+    padding: 10px 12px;
+}
+
+.visa-fact .label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--tj-color-text-body);
+    margin-bottom: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.visa-fact .value {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--tj-color-heading-primary);
+}
+
+.country-visa-card .cta-btn .tj-primary-btn {
+    min-height: 44px;
+}
+
+@media (max-width: 767px) {
+    .visa-facts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .country-visa-card {
+        padding: 18px;
+    }
+}
+
+/* Student Visa Extra Sections (after contact) */
+.student-extra-section {
+    background: #f8fbff;
+    border-top: 1px solid #eaf1fb;
+}
+
+.student-docs-wrap {
+    background: #ffffff;
+    border: 1px solid #e7edf7;
+    border-radius: 14px;
+    padding: 22px;
+    box-shadow: 0 8px 24px rgba(5, 36, 70, 0.05);
+}
+
+.student-docs-list {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.student-docs-list li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    color: var(--tj-color-heading-primary);
+}
+
+.student-docs-list li:last-child {
+    margin-bottom: 0;
+}
+
+.student-docs-tip {
+    margin-top: 16px;
+    margin-bottom: 0;
+    padding: 12px 14px;
+    border-radius: 10px;
+    background: #edf5ff;
+    border: 1px solid #d8e8ff;
+}
+
+.student-faq-list {
+    display: grid;
+    gap: 14px;
+}
+
+.student-faq-item {
+    background: #ffffff;
+    border: 1px solid #e7edf7;
+    border-radius: 12px;
+    padding: 18px 20px;
+}
+
+.student-faq-item h5 {
+    margin-bottom: 8px;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.student-faq-item p {
+    margin-bottom: 0;
+    line-height: 1.7;
+}
+
+.student-guides-wrap {
+    margin-top: 30px;
+}
+
+.student-guides-grid {
+    margin-top: 12px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.student-guide-card {
+    background: #ffffff;
+    border: 1px solid #e7edf7;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.student-guide-card h5 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.student-guide-card p {
+    margin-bottom: 0;
+}
+
+@media (max-width: 991px) {
+    .student-guides-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Process Section Enhancements */
 .process-card {
     background: #fff;
@@ -73,6 +266,11 @@ body.page-software-solutions::before {
     transform: translateY(-5px);
     border-color: var(--tj-color-theme-primary);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.tj-post-single-post .tj-entry-content .process-card p {
+    text-align: left;
+    text-justify: auto;
 }
 
 .process-number {
@@ -189,6 +387,122 @@ body.page-software-solutions::before {
    4. Blue Collar Page Styles
    ========================================= */
 
+/* Blue Collar Hero */
+body.page-blue-collar .bluecollar-hero {
+    position: relative;
+    isolation: isolate;
+    padding-top: 220px;
+    padding-bottom: 110px;
+}
+
+body.page-blue-collar .bluecollar-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg, rgba(2, 14, 34, 0.66) 0%, rgba(3, 17, 40, 0.78) 48%, rgba(3, 17, 40, 0.9) 100%);
+    z-index: 0;
+}
+
+body.page-blue-collar .bluecollar-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+body.page-blue-collar .bluecollar-hero-content {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+}
+
+body.page-blue-collar .bluecollar-hero-content .tj-page-title {
+    color: #ffffff;
+    margin-bottom: 14px;
+    line-height: 1.12;
+    text-wrap: balance;
+}
+
+body.page-blue-collar .bluecollar-hero-content .hero-subtext {
+    color: rgba(255, 255, 255, 0.95);
+    max-width: 920px;
+    margin: 0 auto;
+    font-size: 19px;
+    line-height: 1.65;
+}
+
+body.page-blue-collar .bluecollar-hero-content .hero-stats {
+    margin-top: 22px;
+}
+
+body.page-blue-collar .bluecollar-hero-content .hero-stat {
+    display: inline-flex;
+    align-items: center;
+    padding: 9px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+body.page-blue-collar .bluecollar-hero-content .hero-stat strong {
+    font-weight: 700;
+    margin-right: 5px;
+}
+
+body.page-blue-collar .bluecollar-hero-content .hero-cta .tj-primary-btn {
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 991px) {
+    body.page-blue-collar .bluecollar-hero {
+        padding-top: 180px;
+        padding-bottom: 90px;
+    }
+
+    body.page-blue-collar .bluecollar-hero-content {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    body.page-blue-collar .bluecollar-hero-content .tj-page-title {
+        font-size: 38px;
+    }
+
+    body.page-blue-collar .bluecollar-hero-content .hero-subtext {
+        font-size: 17px;
+        line-height: 1.58;
+    }
+
+    body.page-blue-collar .bluecollar-hero-content .hero-stat {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 575px) {
+    body.page-blue-collar .bluecollar-hero {
+        padding-top: 145px;
+        padding-bottom: 70px;
+    }
+
+    body.page-blue-collar .bluecollar-hero-content .tj-page-title {
+        font-size: 31px;
+        line-height: 1.16;
+    }
+
+    body.page-blue-collar .bluecollar-hero-content .hero-subtext {
+        font-size: 16px;
+    }
+}
+
 /* Work Visa Jobs Grid */
 .work-visa-grid {
     display: grid;
@@ -263,6 +577,12 @@ body.page-software-solutions::before {
     margin-bottom: 0;
     color: var(--tj-color-heading-primary);
     line-height: 1.4;
+}
+
+.tj-post-single-post .tj-entry-content .work-visa-card p {
+    text-align: left;
+    text-justify: auto;
+    line-height: 1.6;
 }
 
 /* Requirements Section - Horizontal Pill Style */
@@ -420,9 +740,236 @@ body.page-software-solutions::before {
     display: block;
 }
 
+/* Blue Collar Eligibility Section */
+.eligibility-section {
+    background: linear-gradient(180deg, #f7fbff 0%, #ffffff 100%);
+}
+
+.eligibility-criteria-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.eligibility-criteria-card {
+    display: flex;
+    gap: 14px;
+    background: #ffffff;
+    border: 1px solid #e7edf7;
+    border-radius: 12px;
+    padding: 16px;
+    transition: all 0.25s ease;
+}
+
+.eligibility-criteria-card:hover {
+    border-color: var(--tj-color-theme-primary);
+    box-shadow: 0 10px 28px rgba(5, 36, 70, 0.08);
+    transform: translateY(-3px);
+}
+
+.criteria-icon {
+    min-width: 46px;
+    width: 46px;
+    height: 46px;
+    border-radius: 10px;
+    background: #eef5ff;
+    color: var(--tj-color-theme-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.criteria-content h5 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 6px 0;
+    line-height: 1.35;
+}
+
+.criteria-content p {
+    margin: 0 0 10px 0;
+    line-height: 1.55;
+}
+
+.criteria-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.criteria-badge--required {
+    background: #e9f8ef;
+    color: #0f7a47;
+}
+
+.criteria-badge--preferred {
+    background: #fff4e8;
+    color: #a05618;
+}
+
+.eligibility-entry-level {
+    margin-top: 18px;
+    border: 1px solid #d9ebff;
+    border-radius: 12px;
+    background: #f2f8ff;
+    padding: 16px 18px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.entry-level-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #d9ecff;
+    color: var(--tj-color-theme-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.entry-level-content h5 {
+    margin: 0 0 6px 0;
+    font-size: 17px;
+}
+
+.entry-level-content p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.eligibility-highlight {
+    background: #ffffff;
+    border: 1px solid #e8edf5;
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(5, 36, 70, 0.08);
+}
+
+.eligibility-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #eaf4ff;
+    color: var(--tj-color-theme-primary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 14px;
+}
+
+.eligibility-highlight .work-visa-title {
+    margin-bottom: 10px;
+}
+
+.eligibility-highlight p {
+    margin-bottom: 0;
+    line-height: 1.7;
+}
+
+.eligibility-points {
+    margin: 14px 0 0 0;
+    padding-left: 18px;
+}
+
+.eligibility-points li {
+    margin-bottom: 8px;
+}
+
+@media (max-width: 991px) {
+    .eligibility-highlight {
+        margin-top: 8px;
+    }
+
+    .eligibility-criteria-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Blue Collar Family + FAQ Sections */
+.family-section {
+    background: #ffffff;
+    padding-top: 0;
+}
+
+.family-info-card {
+    height: 100%;
+    background: #ffffff;
+    border: 1px solid #e8edf5;
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 10px 26px rgba(5, 36, 70, 0.06);
+    transition: all 0.3s ease;
+}
+
+.family-info-card:hover {
+    border-color: var(--tj-color-theme-primary);
+    box-shadow: 0 16px 34px rgba(5, 36, 70, 0.12);
+    transform: translateY(-4px);
+}
+
+.family-info-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #eaf4ff;
+    color: var(--tj-color-theme-primary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 14px;
+}
+
+.family-info-card p {
+    margin-bottom: 10px;
+    line-height: 1.7;
+}
+
+.bluecollar-faq-section {
+    background: #f8fbff;
+    border-top: 1px solid #eef3fa;
+}
+
 /* =========================================
    5. Training Page Styles
    ========================================= */
+
+/* Training Hero */
+body.page-training .training-hero-subtext {
+    color: rgba(255, 255, 255, 0.94);
+    max-width: 980px;
+    margin: 18px auto 0;
+    font-size: 19px;
+    line-height: 1.65;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
+body.page-training .training-hero-cta {
+    margin-top: 20px;
+}
+
+body.page-training .training-hero-cta .tj-primary-btn {
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 767px) {
+    body.page-training .training-hero-subtext {
+        font-size: 16px;
+        line-height: 1.55;
+    }
+}
 
 /* Courses We Offer Grid */
 .training-courses-grid {
@@ -560,10 +1107,191 @@ body.page-software-solutions::before {
     color: var(--tj-color-text-body);
 }
 
+/* Training sidebar scroll behavior (same pattern as blog pages) */
+@media only screen and (min-width: 992px) {
+    body.page-training .tj-service-sidebar {
+        position: sticky;
+        top: 120px;
+        max-height: calc(100vh - 140px);
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding-right: 4px;
+    }
+}
+
+/* Training Exam Comparison Table */
+.exam-compare-wrap {
+    background: #ffffff;
+    border: 1px solid #e8edf5;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(5, 36, 70, 0.06);
+}
+
+.exam-compare-table {
+    margin-bottom: 0;
+    min-width: 820px;
+    border-color: transparent;
+}
+
+.exam-compare-table thead th {
+    background: linear-gradient(90deg, #0b4f95 0%, #1f78d2 100%);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 16px 18px;
+    border: 0;
+    white-space: nowrap;
+}
+
+.exam-compare-table tbody td {
+    padding: 14px 18px;
+    border-top: 1px solid #edf2f8;
+    border-bottom: 0;
+    border-inline-start: 0;
+    border-inline-end: 0;
+    color: var(--tj-color-text-body);
+    font-size: 14px;
+    vertical-align: middle;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.exam-compare-table tbody td:first-child {
+    font-weight: 700;
+    color: var(--tj-color-heading-primary);
+    background: #f7fbff;
+    width: 180px;
+}
+
+.exam-compare-table tbody tr:hover td {
+    background: #f3f8ff;
+}
+
+.exam-compare-table tbody tr:hover td:first-child {
+    color: var(--tj-color-theme-primary);
+}
+
+.exam-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    border-radius: 999px;
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.exam-pill i {
+    font-size: 13px;
+}
+
+.exam-pill--yes {
+    color: #137d4d;
+    background: #e9f9f0;
+}
+
+.exam-pill--no {
+    color: #ba2835;
+    background: #fff0f2;
+}
+
+@media (max-width: 767px) {
+    .exam-compare-wrap {
+        border-radius: 10px;
+    }
+
+    .exam-compare-table thead th,
+    .exam-compare-table tbody td {
+        padding: 12px 13px;
+    }
+
+    .exam-pill {
+        white-space: nowrap;
+    }
+}
+
+/* Training FAQ Accordion */
+.training-faq-section .sec-heading {
+    margin-bottom: 30px;
+}
+
+.training-faq-accordion .accordion-item {
+    border: 1px solid #e8edf5;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 14px;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(5, 36, 70, 0.05);
+}
+
+.training-faq-accordion .accordion-button {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--tj-color-heading-primary);
+    background: #ffffff;
+    box-shadow: none;
+    padding: 18px 22px;
+}
+
+.training-faq-accordion .accordion-button:not(.collapsed) {
+    color: var(--tj-color-theme-primary);
+    background: #f7fbff;
+}
+
+.training-faq-accordion .accordion-button:focus {
+    border-color: transparent;
+    box-shadow: none;
+}
+
+.training-faq-accordion .accordion-body {
+    padding: 0 22px 20px;
+    color: var(--tj-color-text-body);
+    line-height: 1.7;
+}
+
+@media (max-width: 767px) {
+    .training-faq-accordion .accordion-button {
+        font-size: 16px;
+        padding: 16px 16px;
+    }
+
+    .training-faq-accordion .accordion-body {
+        padding: 0 16px 16px;
+    }
+}
+
 
 /* =========================================
    6. Software Solutions Page Styles
    ========================================= */
+
+/* Software Hero */
+body.page-software-solutions .software-hero-subtext {
+    color: rgba(255, 255, 255, 0.94);
+    max-width: 980px;
+    margin: 18px auto 0;
+    font-size: 19px;
+    line-height: 1.65;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
+body.page-software-solutions .software-hero-cta {
+    margin-top: 20px;
+}
+
+body.page-software-solutions .software-hero-cta .tj-primary-btn {
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 767px) {
+    body.page-software-solutions .software-hero-subtext {
+        font-size: 16px;
+        line-height: 1.55;
+    }
+}
 
 /* Hero/Card Styles */
 .software-card {

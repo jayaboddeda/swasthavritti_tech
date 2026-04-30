@@ -64,6 +64,218 @@
         .tj-testimonial-slider .tj-testimonial-author {
             margin-top: auto;
         }
+
+        .tj-why-choose-section {
+            background: linear-gradient(180deg, #f7fbff 0%, #eef6ff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tj-why-choose-section::before {
+            content: "";
+            position: absolute;
+            top: -120px;
+            right: -120px;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 74, 173, 0.15) 0%, rgba(0, 74, 173, 0) 70%);
+            pointer-events: none;
+        }
+
+        .why-choose-heading {
+            max-width: 760px;
+            margin-bottom: 38px;
+        }
+
+        .why-choose-heading .sub-title {
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #0d4b8f;
+            margin-bottom: 10px;
+        }
+
+        .why-choose-heading .sec-title {
+            margin-bottom: 14px;
+        }
+
+        .why-choose-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .why-choose-card {
+            background-color: #ffffff;
+            border: 1px solid rgba(13, 75, 143, 0.12);
+            border-radius: 16px;
+            padding: 28px 26px;
+            min-height: 220px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            position: relative;
+        }
+
+        .why-choose-card:hover,
+        .why-choose-card:focus-within {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 36px rgba(7, 44, 84, 0.12);
+            border-color: rgba(13, 75, 143, 0.28);
+        }
+
+        .why-choose-badge {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 700;
+            color: #ffffff;
+            background: linear-gradient(135deg, #0d4b8f 0%, #1e78d5 100%);
+            margin-bottom: 16px;
+        }
+
+        .why-choose-card h4 {
+            margin-bottom: 10px;
+            font-size: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .why-choose-card p {
+            margin: 0;
+            color: #4a5568;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 991px) {
+            .why-choose-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .final-cta-native {
+            background-color: var(--tj-color-theme-dark);
+        }
+
+        .final-cta-native .cta-wrapper {
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+            gap: 26px;
+        }
+
+        .final-cta-native .cta-title {
+            max-width: 900px;
+        }
+
+        .final-cta-native .cta-title .title {
+            text-transform: none;
+            font-size: 56px;
+            line-height: 1.08;
+            margin-bottom: 12px;
+        }
+
+        .final-cta-native .cta-title p {
+            margin: 0;
+            color: var(--tj-color-common-white);
+            opacity: 0.9;
+            max-width: 760px;
+            line-height: 1.6;
+            margin-inline: auto;
+            text-align: center;
+        }
+
+        .final-cta-native .cta-button {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .final-cta-native .cta-shape-1,
+        .final-cta-native .cta-shape-2 {
+            display: none;
+        }
+
+        .hero-stats-strip {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+            width: 100%;
+            max-width: 760px;
+            margin: 20px auto 28px;
+        }
+
+        .hero-stat-card {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 18px;
+            padding: 20px 14px;
+            min-height: 126px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(6, 28, 54, 0.14);
+            backdrop-filter: blur(2px);
+        }
+
+        .hero-stat-card:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 14px 34px rgba(6, 28, 54, 0.2);
+        }
+
+        .hero-stat-number {
+            color: #0f315a;
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 7px;
+            letter-spacing: -0.03em;
+        }
+
+        .hero-stat-number .odometer {
+            display: inline-block;
+        }
+
+        .hero-stat-label {
+            color: #31587f;
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 1.35;
+        }
+
+        @media only screen and (min-width: 768px) and (max-width: 991px),
+        only screen and (min-width: 576px) and (max-width: 767px),
+        (max-width: 575px) {
+            .final-cta-native .cta-wrapper {
+                gap: 20px;
+            }
+
+            .final-cta-native .cta-title .title {
+                font-size: 34px;
+            }
+
+            .hero-stats-strip {
+                grid-template-columns: 1fr;
+                max-width: 320px;
+                margin: 18px auto 24px;
+            }
+
+            .hero-stat-number {
+                font-size: 38px;
+            }
+
+            .hero-stat-label {
+                font-size: 15px;
+            }
+        }
     </style>
 
     <!-- Google Tag Manager -->
@@ -118,10 +330,24 @@
                         <div class="hero-content-four">
                             <span class="hero-subtitle">Welcome To Swasthavritti</span>
                             <h1 class="hero-title text-anim">
-                                Embark on Your <span>International</span> <br>career journey</h1>
+                                Study Abroad & <span>Visa Consultants</span> <br>in Hyderabad</h1>
                             <div class="desc wow fadeInUp text-center" data-wow-delay="0.1s">
-                                <p>Unlock global opportunities in healthcare, hospitality, and skilled trades with our
-                                    expert visa consultancy services.</p>
+                                <p>Unlock global opportunities in healthcare, hospitality, and skilled trades. Expert student visa guidance, 
+                                    IELTS & PTE coaching, and overseas job placement - all under one roof.</p>
+                            </div>
+                            <div class="hero-stats-strip wow fadeInUp" data-wow-delay="0.2s">
+                                <div class="hero-stat-card">
+                                    <div class="hero-stat-number"><span class="odometer" data-count="7">0</span>+</div>
+                                    <div class="hero-stat-label">Countries</div>
+                                </div>
+                                <div class="hero-stat-card">
+                                    <div class="hero-stat-number"><span class="odometer" data-count="8">0</span></div>
+                                    <div class="hero-stat-label">Exams Coached</div>
+                                </div>
+                                <div class="hero-stat-card">
+                                    <div class="hero-stat-number"><span class="odometer" data-count="500">0</span>+</div>
+                                    <div class="hero-stat-label">Students Placed</div>
+                                </div>
                             </div>
                             <div class="wow fadeInUp" data-wow-delay="0.3s">
                                 <a href="contact" class="tj-primary-btn">
@@ -161,6 +387,19 @@
         <!-- start: Feature Section -->
         <section class="tj-feature-section-three">
             <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="sec-heading style-3 sec-heading-centered feature-intro">
+                            <div class="sec-text">
+                                <span class="sub-title wow fadeInUp" data-wow-delay="0.1s">What We Do</span>
+                                <h2 class="sec-title wow fadeInUp" data-wow-delay="0.15s">Our Services</h2>
+                                <div class="desc wow fadeInUp" data-wow-delay="0.2s">
+                                    <p>From visa filing to test coaching to job placement &mdash; everything you need for your international journey, at our Suchitra Circle office in Hyderabad.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="feature-style-5">
                     <div class="feature-item style-5 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="feature-icon svg-animate">
@@ -180,12 +419,12 @@
                         <div class="feature-content">
                             <h5 class="title">Software Solutions</h5>
                             <div class="desc">
-                                <p>Custom software development and digital solutions to streamline your business
-                                    operations and enhance productivity.
+                                <p>Custom web & mobile apps, AI & RAG systems, 
+                                    voice agents and e-commerce solutions for businesses.
                                 </p>
                             </div>
                             <a href="software-solutions" class="feature-btn">
-                                Know More <i class="tji-arrow-right"></i>
+                                Learn More <i class="tji-arrow-right"></i>
                             </a>
                         </div>
                     </div>
@@ -208,11 +447,11 @@
                         <div class="feature-content">
                             <h5 class="title">Student Visa</h5>
                             <div class="desc">
-                                <p>A student visa permits international students to study in a foreign country.
+                                <p>End-to-end visa assistance for USA, UK, Canada, Australia, New Zealand, Europe and Mauritius. 6-step guided process.
                                 </p>
                             </div>
                             <a href="student-visa" class="feature-btn">
-                                Know More <i class="tji-arrow-right"></i>
+                                Learn More <i class="tji-arrow-right"></i>
                             </a>
                         </div>
                     </div>
@@ -227,13 +466,13 @@
 
                         </div>
                         <div class="feature-content">
-                            <h5 class="title">Training</h5>
+                            <h5 class="title">Test Preparation</h5>
                             <div class="desc">
-                                <p>Students prepare for international tests needed for studying abroad.
+                                <p>IELTS, PTE, OET, TOEFL, GRE, GMAT, SAT & CAT coaching. Score guarantee. Small batches. Online & offline in Hyderabad.
                                 </p>
                             </div>
                             <a href="training" class="feature-btn">
-                                Know More <i class="tji-arrow-right"></i>
+                                Learn More <i class="tji-arrow-right"></i>
                             </a>
                         </div>
                     </div>
@@ -249,14 +488,13 @@
 
                         </div>
                         <div class="feature-content">
-                            <h5 class="title">Blue Collar</h5>
+                            <h5 class="title">Overseas Jobs</h5>
                             <div class="desc">
-                                <p>Blue-collar describes workers in manual or industrial jobs, often involving physical
-                                    labor.
+                                <p>Blue collar & skilled worker visa placement abroad. Nursing, welding, truck driving, hospitality and more. PR pathways included.
                                 </p>
                             </div>
                             <a href="bluecollar" class="feature-btn">
-                                Know More <i class="tji-arrow-right"></i>
+                                Learn More <i class="tji-arrow-right"></i>
                             </a>
                         </div>
                     </div>
@@ -276,9 +514,11 @@
                     <div class="col-12">
                         <div class="sec-heading style-3">
                             <div class="sec-text">
-                                <span class="sub-title wow fadeInUp" data-wow-delay="0.1s">Global Study
-                                    Destinations</span>
-                                <h2 class="sec-title text-anim">Your Path to International Education</h2>
+                                <span class="sub-title wow fadeInUp" data-wow-delay="0.1s">Study Destinations</span>
+                                <h2 class="sec-title text-anim">Where Our Students Go</h2>
+                                <div class="desc wow fadeInUp" data-wow-delay="0.2s">
+                                    <p>We have deep expertise in student visa processes for these 7 countries. Pick your destination and get started.</p>
+                                </div>
                             </div>
                             <div class="swiper_navigations service-navigation d-none d-md-inline-flex wow fadeInUp"
                                 data-wow-delay="0.3s">
@@ -563,6 +803,43 @@
         </section>
         <!-- end: Marquee Section -->
 
+        <!-- start: Why Choose Section -->
+        <section class="tj-why-choose-section section-space">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="why-choose-heading">
+                            <span class="sub-title wow fadeInUp" data-wow-delay="0.1s">Why Swasthavritti</span>
+                            <h2 class="sec-title wow fadeInUp" data-wow-delay="0.15s">Why Students in Hyderabad Choose Us</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="why-choose-grid">
+                    <div class="why-choose-card wow fadeInUp" data-wow-delay="0.1s" tabindex="0">
+                        <span class="why-choose-badge"><i class="fa-solid fa-building"></i></span>
+                        <h4>Hyderabad Office</h4>
+                        <p>Walk in to our Suchitra Circle office. We serve students from across Hyderabad, Kompally, Secunderabad and Telangana.</p>
+                    </div>
+                    <div class="why-choose-card wow fadeInUp" data-wow-delay="0.2s" tabindex="0">
+                        <span class="why-choose-badge"><i class="fa-solid fa-circle-check"></i></span>
+                        <h4>High Approval Rate</h4>
+                        <p>Our document-review process catches errors before submission, keeping our visa approval rate consistently high.</p>
+                    </div>
+                    <div class="why-choose-card wow fadeInUp" data-wow-delay="0.3s" tabindex="0">
+                        <span class="why-choose-badge"><i class="fa-solid fa-graduation-cap"></i></span>
+                        <h4>In-House Coaching</h4>
+                        <p>Prepare IELTS, PTE or OET in the same office where we file your visa. No need to visit multiple centres.</p>
+                    </div>
+                    <div class="why-choose-card wow fadeInUp" data-wow-delay="0.4s" tabindex="0">
+                        <span class="why-choose-badge"><i class="fa-solid fa-handshake"></i></span>
+                        <h4>End-to-End Support</h4>
+                        <p>From first counselling to pre-departure briefing &mdash; and post-arrival support &mdash; we stay with you throughout.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end: Why Choose Section -->
+
         <!-- start: Testimonial Section -->
         <section class="tj-testimonial-section">
             <div class="container">
@@ -570,8 +847,8 @@
                     <div class="col-12">
                         <div class="sec-heading">
                             <div class="sec-text">
-                                <span class="sub-title wow fadeInUp" data-wow-delay="0.1s">Testimonials</span>
-                                <h2 class="sec-title text-anim">Voices of Our Achievers</h2>
+                                <span class="sub-title wow fadeInUp" data-wow-delay="0.1s">Student Reviews</span>
+                                <h2 class="sec-title text-anim">What Our Students Say</h2>
                             </div>
                             <div class="swiper_navigations testimonial-navigation d-none d-md-inline-flex">
                                 <div class="navigation slider-prev"><i class="tji-arrow-left"></i></div>
@@ -592,11 +869,9 @@
                                                     <i class="tji-right-quote"></i>
                                                 </div>
                                                 <div class="desc">
-                                                    <p>It’s an excellent consultancy . The staff over there are very
-                                                        amiably with the students and gives updates regarding next
-                                                        process timely. It’s very beneficial and profitable whoever
-                                                        enrol with this consultancy. I’m so obliged as I’m associated
-                                                        with them as a student.</p>
+                                                    <p>Excellent consultancy. Staff are very friendly with students
+                                                         and give timely updates regarding the next process. Highly 
+                                                         recommend Swasthavritti for anyone planning to study abroad from Hyderabad.</p>
                                                 </div>
                                             </div>
                                             <div class="tj-testimonial-author">
@@ -630,8 +905,8 @@
                                                     <i class="tji-right-quote"></i>
                                                 </div>
                                                 <div class="desc">
-                                                    <p>Very good consultancy, staff has a very friendly approach and
-                                                        explains all process.</p>
+                                                    <p>They explained the entire visa process in detail. Online training quality is excellent and the guidance 
+                                                        for career development is outstanding.</p>
                                                 </div>
                                             </div>
                                             <div class="tj-testimonial-author">
@@ -699,7 +974,7 @@
                                                     <i class="tji-right-quote"></i>
                                                 </div>
                                                 <div class="desc">
-                                                    <p>Good place to learn new things.</p>
+                                                    <p>Got my Canada student visa approved on the first attempt. The team's document review is thorough and the SOP they helped me write was spot on.</p>
                                                 </div>
                                             </div>
                                             <div class="tj-testimonial-author">
@@ -811,8 +1086,8 @@
                     <div class="col-12">
                         <div class="sec-heading style-4">
                             <div class="sec-text">
-                                <span class="sub-title wow fadeInUp" data-wow-delay="0.2s">Insights & Resources</span>
-                                <h2 class="sec-title text-anim">Expert Guidance for Your Study Abroad Journey</h2>
+                                <span class="sub-title wow fadeInUp" data-wow-delay="0.2s">From Our Blog</span>
+                                <h2 class="sec-title text-anim">Latest Study Abroad Guides</h2>
                             </div>
                             <div class="blog-button wow fadeInUp" data-wow-delay="0.6s">
                                 <a href="blog" class="tj-primary-btn">
@@ -920,6 +1195,40 @@
             </div>
         </section>
         <!-- end: Blog Section -->
+
+        <!-- start: Final CTA Section -->
+        <section class="tj-cta-section final-cta-native">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="cta-wrapper">
+                            <div class="cta-title">
+                                <h2 class="title wow fadeInUp" data-wow-delay="0.1s">Ready to Begin Your International Journey?</h2>
+                                <p class="wow fadeInUp" data-wow-delay="0.2s">Book a free 30-minute counselling session at our Suchitra Circle office in Hyderabad. Walk away with a clear action plan &mdash; at no cost.</p>
+                            </div>
+                            <div class="cta-button wow fadeInUp" data-wow-delay="0.3s">
+                                <a href="tel:+919010000700" class="tj-primary-btn white-btn">
+                                    <div class="btn_inner">
+                                        <div class="btn_icon">
+                                            <span>
+                                                <i class="tji-arrow-right"></i>
+                                                <i class="tji-arrow-right"></i>
+                                            </span>
+                                        </div>
+                                        <div class="btn_text">
+                                            <span>Book Free Consultation</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img class="cta-shape-1" src="assets/images/shapes/cta-shapes-1.png" alt="Shapes">
+            <img class="cta-shape-2" src="assets/images/shapes/cta-shapes-2.png" alt="Shapes">
+        </section>
+        <!-- end: Final CTA Section -->
 
     </main>
 

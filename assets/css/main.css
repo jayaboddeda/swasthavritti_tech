@@ -21759,6 +21759,37 @@ only screen and (min-width: 992px) and (max-width: 1199px),
 .tj-feature-section-three {
   background-color: var(--tj-color-theme-dark);
   overflow: hidden;
+  padding-top: 90px;
+}
+
+.tj-feature-section-three .feature-intro {
+  max-width: 760px;
+  margin-bottom: 36px;
+}
+
+.tj-feature-section-three .feature-intro .sub-title {
+  color: var(--tj-color-common-white);
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.tj-feature-section-three .feature-intro .sec-title {
+  color: var(--tj-color-common-white);
+}
+
+.tj-feature-section-three .feature-intro .desc p {
+  color: var(--tj-color-common-white-2);
+  margin-bottom: 0;
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px),
+(max-width: 575px) {
+  .tj-feature-section-three {
+    padding-top: 70px;
+  }
+
+  .tj-feature-section-three .feature-intro {
+    margin-bottom: 28px;
+  }
 }
 
 .feature-style-5 {
