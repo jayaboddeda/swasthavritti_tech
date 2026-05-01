@@ -3,6 +3,7 @@ Options -MultiViews -Indexes
 DirectoryIndex index.html
 
 RewriteEngine On
+RewriteBase /
 
 # Legacy blog page redirect to new paginated blog list.
 RewriteRule ^blog-page-2/?$ /blog?page=2 [R=301,L,NC]
@@ -10,15 +11,20 @@ RewriteRule ^blog-page-2/index\.html$ /blog?page=2 [R=301,L,NC]
 RewriteRule ^blog-page-2\.html$ /blog?page=2 [R=301,L,NC]
 
 # Redirect /index.html (root or nested) to extensionless URL.
-RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html(?:[\s?]|$) [NC]
+RewriteCond %{THE_REQUEST} \s/+(.*?/)?index\.html(?:[\s?]|$) [NC]
 RewriteRule ^ %1 [R=301,L]
 
 # Redirect explicit .html requests to extensionless URLs.
 RewriteCond %{THE_REQUEST} \s/+(.+?)\.html(?:[\s?]|$) [NC]
 RewriteRule ^ %1 [R=301,L]
 
+# Map root-level directories to their corresponding .html files if they exist.
+# This prevents serving the directory's index.html when a root page like /blog exists.
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^([^/]+)/?$ /$1.html [L]
+
 # Internally map extensionless URLs to existing .html files.
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME}\.html -f
-RewriteRule ^(.+?)/?$ $1.html [L]
+RewriteRule ^(.+?)/?$ /$1.html [L]

@@ -10338,9 +10338,6 @@ only screen and (min-width: 576px) and (max-width: 767px),
   .tj-post-area .tj-blog-sidebar {
     position: sticky;
     top: 120px;
-    max-height: calc(100vh - 140px);
-    overflow-y: auto;
-    overflow-x: hidden;
   }
 }
 
