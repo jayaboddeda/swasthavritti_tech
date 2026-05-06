@@ -4,7 +4,7 @@
  * This script allows you to easily include reusable HTML components in your pages.
  * 
  * Usage:
- * 1. Add this script to your HTML page: <script src="components/component-loader.js"></script>
+ * 1. Add this script to your HTML page: <script src="/components/component-loader.js"></script>
  * 2. Add a placeholder div where you want to load the component:
  *    <div data-component="testimonials"></div>
  *    <div data-component="blog-section"></div>
@@ -84,13 +84,13 @@
 
     // Component mapping
     const components = {
-        'header': 'components/header.html',
-        'testimonials': 'components/testimonials.html',
-        'blog-section': 'components/blog-section.html',
-        'contact': 'components/contact.html',
-        'footer': 'components/footer.html',
-        'related-services': 'components/related-services.html',
-        'sidebar-cta': 'components/sidebar-cta.html'
+        'header': '/components/header.html',
+        'testimonials': '/components/testimonials.html',
+        'blog-section': '/components/blog-section.html',
+        'contact': '/components/contact.html',
+        'footer': '/components/footer.html',
+        'related-services': '/components/related-services.html',
+        'sidebar-cta': '/components/sidebar-cta.html'
     };
 
     /**
@@ -315,16 +315,16 @@
         if (!containers.length) return;
 
         const posts = [
-            { href: 'student-visa-guide-usa-uk-canada-australia-2026', title: 'Student Visa Guide 2026: USA, UK, Canada, Australia', date: 'Mar 2026', image: '../assets/images/blog/tj-blog-1.webp', alt: 'Student Visa Guide 2026' },
-            { href: 'ielts-2026-changes-preparation-guide', title: 'IELTS 2026 Changes and Preparation Guide', date: 'Mar 2026', image: '../assets/images/blog/tj-blog-2.webp', alt: 'IELTS 2026 Changes' },
-            { href: 'overseas-blue-collar-jobs-india-2026-work-visa-guide', title: 'Overseas Blue-Collar Jobs India 2026 Guide', date: 'Mar 2026', image: '../assets/images/blog/tj-blog-3.webp', alt: 'Overseas Blue-Collar Jobs Guide' },
-            { href: 'study-in-usa-from-hyderabad', title: 'Study in USA from Hyderabad 2026', date: 'Mar 2026', image: '../assets/images/blog/tj-blog-1.webp', alt: 'Study in USA from Hyderabad' },
-            { href: 'study-in-uk-from-hyderabad', title: 'Study in UK from Hyderabad 2026', date: 'Mar 2026', image: '../assets/images/blog/tj-blog-2.webp', alt: 'Study in UK from Hyderabad' },
-            { href: 'study-in-canada-from-hyderabad', title: 'Study in Canada from Hyderabad 2026', date: 'Mar 2026', image: '../assets/images/blog/tj-blog-3.webp', alt: 'Study in Canada from Hyderabad' },
-            { href: 'study-in-australia-from-hyderabad', title: 'Study in Australia from Hyderabad 2026', date: 'Mar 2026', image: '../assets/images/blog/tj-blog-1.webp', alt: 'Study in Australia from Hyderabad' },
-            { href: 'study-in-europe-from-hyderabad', title: 'Study in Europe from Hyderabad 2026', date: 'Mar 2026', image: '../assets/images/blog/tj-blog-2.webp', alt: 'Study in Europe from Hyderabad' },
-            { href: 'study-in-new-zealand-from-hyderabad', title: 'Study in New Zealand from Hyderabad 2026', date: 'Mar 2026', image: '../assets/images/blog/tj-blog-3.webp', alt: 'Study in New Zealand from Hyderabad' },
-            { href: 'study-in-mauritius-from-hyderabad', title: 'Study in Mauritius from Hyderabad 2026', date: 'Mar 2026', image: '../assets/images/blog/tj-blog-1.webp', alt: 'Study in Mauritius from Hyderabad' }
+            { href: '/blog/student-visa-guide-usa-uk-canada-australia-2026', title: 'Student Visa Guide 2026: USA, UK, Canada, Australia', date: 'Mar 2026', image: '/assets/images/blog/tj-blog-1.webp', alt: 'Student Visa Guide 2026' },
+            { href: '/blog/ielts-2026-changes-preparation-guide', title: 'IELTS 2026 Changes and Preparation Guide', date: 'Mar 2026', image: '/assets/images/blog/tj-blog-2.webp', alt: 'IELTS 2026 Changes' },
+            { href: '/blog/overseas-blue-collar-jobs-india-2026-work-visa-guide', title: 'Overseas Blue-Collar Jobs India 2026 Guide', date: 'Mar 2026', image: '/assets/images/blog/tj-blog-3.webp', alt: 'Overseas Blue-Collar Jobs Guide' },
+            { href: '/blog/study-in-usa-from-hyderabad', title: 'Study in USA from Hyderabad 2026', date: 'Mar 2026', image: '/assets/images/blog/tj-blog-1.webp', alt: 'Study in USA from Hyderabad' },
+            { href: '/blog/study-in-uk-from-hyderabad', title: 'Study in UK from Hyderabad 2026', date: 'Mar 2026', image: '/assets/images/blog/tj-blog-2.webp', alt: 'Study in UK from Hyderabad' },
+            { href: '/blog/study-in-canada-from-hyderabad', title: 'Study in Canada from Hyderabad 2026', date: 'Mar 2026', image: '/assets/images/blog/tj-blog-3.webp', alt: 'Study in Canada from Hyderabad' },
+            { href: '/blog/study-in-australia-from-hyderabad', title: 'Study in Australia from Hyderabad 2026', date: 'Mar 2026', image: '/assets/images/blog/tj-blog-1.webp', alt: 'Study in Australia from Hyderabad' },
+            { href: '/blog/study-in-europe-from-hyderabad', title: 'Study in Europe from Hyderabad 2026', date: 'Mar 2026', image: '/assets/images/blog/tj-blog-2.webp', alt: 'Study in Europe from Hyderabad' },
+            { href: '/blog/study-in-new-zealand-from-hyderabad', title: 'Study in New Zealand from Hyderabad 2026', date: 'Mar 2026', image: '/assets/images/blog/tj-blog-3.webp', alt: 'Study in New Zealand from Hyderabad' },
+            { href: '/blog/study-in-mauritius-from-hyderabad', title: 'Study in Mauritius from Hyderabad 2026', date: 'Mar 2026', image: '/assets/images/blog/tj-blog-1.webp', alt: 'Study in Mauritius from Hyderabad' }
         ];
 
         const currentPage = getCurrentPageSlug();
@@ -372,3 +372,4 @@
         });
     }
 })();
+
