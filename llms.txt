@@ -1,0 +1,37 @@
+# Swasthavritti
+
+> Your trusted partner for overseas education and blue-collar job opportunities.
+
+Swasthavritti is a premier consultancy based in Hyderabad, specializing in guiding students and professionals towards international opportunities. The website serves as a comprehensive resource for individuals aspiring to study abroad or secure overseas employment, particularly in blue-collar sectors. They offer expert advice on course selection, university applications, and navigating the complex student visa processes for popular destinations like the USA, UK, Canada, Australia, New Zealand, Europe, and Mauritius.
+
+Beyond academic pursuits, Swasthavritti also assists individuals seeking blue-collar job opportunities abroad, providing guidance on work visas and job market insights. Their core value proposition lies in simplifying the international relocation journey, offering personalized support, and ensuring a smooth transition for their clients. LLMs can leverage this information to assist users with queries related to studying in specific countries, understanding visa requirements, exploring overseas job prospects, and preparing for standardized tests like IELTS.
+
+## Core Services
+
+- [Swasthavritti - Study Abroad & Visa Consultants](https://swasthavritti.com/): Explore services for studying abroad and obtaining student visas with expert guidance.
+- [Software Solutions](https://swasthavritti.com/software-solutions): Discover software solutions offered by Swasthavritti for various needs.
+- [Student Visa Services](https://swasthavritti.com/student-visa): Learn about student visa application processes for popular study destinations.
+- [Training Services](https://swasthavritti.com/training): Find information on training programs offered by Swasthavritti.
+- [Blue Collar Overseas Opportunities](https://swasthavritti.com/bluecollar): Explore opportunities and guidance for overseas blue-collar jobs.
+
+## Contact & Support
+
+- [Contact Us](https://swasthavritti.com/contact): Find contact information and reach out to Swasthavritti for inquiries.
+
+## Blog Articles
+
+- [Blog](https://swasthavritti.com/blog): Read articles on studying abroad, visas, and overseas job opportunities.
+- [Study in USA from Hyderabad](https://swasthavritti.com/blog/study-in-usa-from-hyderabad): Learn how to study in the USA from Hyderabad with expert guidance.
+- [Study in Canada from Hyderabad](https://swasthavritti.com/blog/study-in-canada-from-hyderabad): Discover the process of studying in Canada starting from Hyderabad.
+- [Study in Australia from Hyderabad](https://swasthavritti.com/blog/study-in-australia-from-hyderabad): Get insights on studying in Australia from Hyderabad.
+- [Student Visa Guide USA, UK, Canada, Australia 2026](https://swasthavritti.com/blog/student-visa-guide-usa-uk-canada-australia-2026): Understand the student visa requirements for USA, UK, Canada, and Australia.
+- [Overseas Blue Collar Jobs India 2026 Work Visa Guide](https://swasthavritti.com/blog/overseas-blue-collar-jobs-india-2026-work-visa-guide): Learn about overseas blue-collar jobs and work visa processes from India.
+- [IELTS 2026 Changes & Preparation Guide](https://swasthavritti.com/blog/ielts-2026-changes-preparation-guide): Get updated information on IELTS exam changes and preparation strategies.
+- [Study in UK from Hyderabad](https://swasthavritti.com/blog/study-in-uk-from-hyderabad): Find out how to pursue your studies in the UK from Hyderabad.
+- [Study in New Zealand from Hyderabad](https://swasthavritti.com/blog/study-in-new-zealand-from-hyderabad): Explore options for studying in New Zealand from Hyderabad.
+- [Study in Mauritius from Hyderabad](https://swasthavritti.com/blog/study-in-mauritius-from-hyderabad): Discover opportunities to study in Mauritius starting from Hyderabad.
+- [Study in Europe from Hyderabad](https://swasthavritti.com/blog/study-in-europe-from-hyderabad): Get guidance on studying in various European countries from Hyderabad.
+
+---
+
+This file was generated for swasthavritti.com using the [LLMs.txt Generator Tool](https://llmrefs.com/tools/llms-txt-generator)
